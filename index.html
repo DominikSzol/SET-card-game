@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <title>Javascript Beadandó feladat</title>
+</head>
+<body>
+    <h1>The Set Game</h1>
+<div class="main-panel">
+    <nav class="main-menu">
+        <ul>
+            <li><a href="https://fejlesztojatekvilag.hu/uploaded/set_magyar_szabaly.pdf" target="blank">Játékszabályzat</a> </li>
+            <li>Játékosok száma: <input id="player-number" type="number" onkeydown="return false" min="1" max="10" value="1"> </li>
+            <li class="gamemodes" >Jelenlegi játékmód: <span id="current-gamemode">Verseny</span>
+                <div class="gamemode-dropdown">
+                    <button>Gyakorló</button>
+                    <button>Verseny</button>
+                </div>
+            </li>
+            <li class="difficulty" >Jelenlegi nehézség: <span id="current-difficulty">Haladó</span>
+                <div class="difficulty-dropdown">
+                    <button>Kezdő</button>
+                    <button>Haladó</button>
+                </div>
+            </li>
+            <li class="options">Egyéb beállítások
+                <div class="options-dropdown">
+                    <button id="enable-help1">Van-e SET a leosztásban gomb engedélyezése</button>
+                    <button id="enable-help2">SET megmutatása gomb engedélyezése</button>
+                    <button id="3more-by-button">A plusz 3 lapos kiegészítés külön gombon menjen engedélyezése</button>
+                </div>
+            </li>
+            <button id="start-button">Start</button>
+        </ul>
+    </nav>
+
+    <img id="menu-image" src="MainSetPicture.jpg" alt="The SET Game">
+
+    
+    <div class=enabled-options>
+        <h3>Bekapcsolt beállítások:</h3>
+        <ul>
+
+        </ul>
+    </div>
+    <div class="players">
+        <h3>Jelenlegi játékosok</h3>
+        <ul>
+            <li><input type="text" value="Játékos1"></li>
+        </ul>
+    </div>
+</div>
+<div class="gameplay-panel">
+    <nav class="gameplay-menu">
+        <ul>
+            <li><button id="help1">Van-e SET a leosztásban</button><div id="answer"></div></li>
+            <li><button id="help2">SET megmutatása</button></li>
+            <li><button id="more-card">Kérek még 3 lapot</button></li>
+            <li><button id="back-to-menu">Vissza a menübe</button></li>
+        </ul>
+    </nav>
+    <div class="playfield">
+        <table id="cards-on-table">
+            <tbody>
+            <tr id="r0">
+                <td id="cell0" onclick="selectCard(this, 0)"></td>
+                <td id="cell1" onclick="selectCard(this, 1)"></td>
+                <td id="cell2" onclick="selectCard(this, 2)"></td>
+            </tr>
+            <tr id="r1">
+                <td id="cell3" onclick="selectCard(this, 3)"></td>
+                <td id="cell4" onclick="selectCard(this, 4)"></td>
+                <td id="cell5" onclick="selectCard(this, 5)"></td>
+            </tr>
+            <tr id="r2">
+                <td id="cell6" onclick="selectCard(this, 6)"></td>
+                <td id="cell7" onclick="selectCard(this, 7)"></td>
+                <td id="cell8" onclick="selectCard(this, 8)"></td>
+            </tr>
+            <tr id="r3">
+                <td id="cell9" onclick="selectCard(this, 9)"></td>
+                <td id="cell10" onclick="selectCard(this, 10)"></td>
+                <td id="cell11" onclick="selectCard(this, 11)"></td>
+            </tr>
+        </tbody>
+        </table>
+    </div>
+    <div id="result"></div>
+    <div class="current-players">
+        <table class="players-table">
+            <tr>
+                <th>Név</th>
+                <th>Pontszám</th>
+            </tr>
+        </table>
+    </div>
+    <div id="set-found"></div>
+    <div id="deck">A pakliban található kártyák száma:
+        <span id="cards-left"></span>
+    </div>
+</div>
+
+
+    <script src="index.js"></script>
+</body>
+</html>
